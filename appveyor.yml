@@ -12,7 +12,7 @@ init:
   - 'echo PYTHON_HOME=%PYTHON_HOME%'
   - '%PYTHON_HOME%/python.exe -V' # show Python version
   - '%PYTHON_HOME%/Scripts/pip.exe --version' # show pip version
-  - 'set PIP_DEFAULT_TIMEOUT=180'
+  - 'set PIP_DEFAULT_TIMEOUT=170'
 
 install:
   - '%PYTHON_HOME%/python.exe -m pip install --upgrade pip'
