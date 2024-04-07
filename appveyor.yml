@@ -1,9 +1,9 @@
 build: off
 version: 4.6.1.{build}
-image: Visual Studio 2013
+image: Visual Studio 2019
 
 environment:
-    PYTHON_HOME: 'C:/Python34'
+    PYTHON_HOME: 'C:/Python35'
     SZ_EXE   :   '"C:/Program Files/7-Zip/7z.exe"'
     make : 'C:/MinGW/bin/mingw32-make.exe'
 
@@ -88,15 +88,3 @@ artifacts:
     name: Portable
 
   - path: .coverage
-
-deploy:
-  - provider: S3
-    access_key_id:
-      secure: CrPvjz7Jvg4gwOHKxUsL0PPR4mqAjB2p15/pvFw3fCk=
-    secret_access_key:
-      secure: VoAH5pVyhmTK3/KRuV5WcgfkTR3k/M9QDt7UD6ewcwNfkUvMynwjAHnKCG4vR0Rx
-    bucket: bleachbitci
-    folder: dl/$(APPVEYOR_BUILD_VERSION)-$(APPVEYOR_REPO_BRANCH)
-    artifact:
-    set-public: true
-    reduced_redundancy: true
